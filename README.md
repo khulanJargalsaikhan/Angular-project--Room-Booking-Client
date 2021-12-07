@@ -24,3 +24,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Created a form
 - Bound a form
 - Saved the form data
+
+*4th commit*
+- Dynamic classes applied to form elements (html/css classes => ng-touched/ng-untouched, ng-pristine/ng-dirty, ng-valid/ng-invalid)
+- Validation messages and controlling the submit button
+- Implementing custom validation
