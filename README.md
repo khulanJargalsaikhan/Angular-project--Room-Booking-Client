@@ -29,3 +29,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Dynamic classes applied to form elements (html/css classes => ng-touched/ng-untouched, ng-pristine/ng-dirty, ng-valid/ng-invalid)
 - Validation messages and controlling the submit button
 - Implementing custom validation
+
+*5th commit*
+- Set up navigation to show a form
+- Created a reactive form
+- Set and read form control values
+- Used the FormBuilder
+- Implemented validators
