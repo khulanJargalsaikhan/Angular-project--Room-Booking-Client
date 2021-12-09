@@ -36,3 +36,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Set and read form control values
 - Used the FormBuilder
 - Implemented validators
+
+*6th commit*
+- Fixed a lifecycle bug
+- Implemented the delete functions
+- Displaying data with pipes
+- Displaying the calendar component
+- Created the add, edit, and delete functionality
+- Responding to the calendar click event
+
