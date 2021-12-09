@@ -45,3 +45,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Created the add, edit, and delete functionality
 - Responding to the calendar click event
 
+*7th commit*
+- Built local version environment, production version, and development version. (ng serve, ng serve -- prod, ng serve -c local(no REST))
