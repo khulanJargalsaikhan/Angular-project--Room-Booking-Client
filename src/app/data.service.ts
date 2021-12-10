@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {Layout, LayoutCapacity, Room} from "./model/Room";
 import {User} from "./model/User";
-import {Observable, of, Subscribable} from "rxjs";
+import {map, Observable, of, Subscribable} from "rxjs";
 import {Booking} from "./model/Booking";
 import {formatDate} from "@angular/common";
 import {environment} from "../environments/environment";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,40 @@ import {environment} from "../environments/environment";
 export class DataService {
 
   getRooms() : Observable<Array<Room>> {
-    // @ts-ignore
-    return of(null);
+    return this.http.get<Array<Room>>(environment.restUrl + '/api/rooms')
+      .pipe(
+        map( data => {
+          const rooms = new Array<Room>();
+          for (const room of data){
+            rooms.push(Room.fromHttp(room));
+          }
+          return rooms;
+        })
+      )
+
   }
 
   getUsers() : Observable<Array<User>>  {
-    // @ts-ignore
-    return of(null);
+    return this.http.get<Array<User>>(environment.restUrl + '/api/users')
+      .pipe(
+        map(data => {
+          const users = new Array<User>();
+          for (const user of data) {
+            users.push(User.fromHttp(user));
+          }
+          return users;
+        })
+      );
+  }
+
+  //used helper method from User class to convert json to User object
+  getUser(id: number) : Observable<User>{
+    return this.http.get<User>(environment.restUrl + '/api/users/' + id)
+      .pipe(
+        map( data => {
+          return User.fromHttp(data);
+        })
+      );
   }
 
   getBookings(date: string) : Observable<Array<Booking>>{
@@ -56,6 +84,8 @@ export class DataService {
     return of(null);
   }
 
+
+
   updateRoom(room: Room) : Observable<Room> {
     // @ts-ignore
     return of(null);
@@ -82,8 +112,13 @@ export class DataService {
 
 
 
-  constructor() {
-
+  constructor(private http: HttpClient) {
     console.log(environment.restUrl);
   }
+
+
+
+
+
+
 }

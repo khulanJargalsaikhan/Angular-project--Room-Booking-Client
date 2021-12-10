@@ -47,3 +47,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 *7th commit*
 - Built local version environment, production version, and development version. (ng serve, ng serve -- prod, ng serve -c local(no REST))
+
+*8th commit*
+- Initiating the call to a Rest endpoint
+- Configuring CORS in Spring
+- Manipulating the REST return data type (created helper method in the Class)
+- Pre-processing the REST return data
