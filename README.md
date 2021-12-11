@@ -53,3 +53,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Configuring CORS in Spring
 - Manipulating the REST return data type (created helper method in the Class)
 - Pre-processing the REST return data
+
+*9th commit*
+- Dealing with slow REST responses
+- Catching REST error
+- Investigating REST errors
+- Retrying when an error occurs
+- Surviving a page refresh

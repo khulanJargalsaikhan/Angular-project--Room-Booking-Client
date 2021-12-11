@@ -39,16 +39,6 @@ export class DataService {
       );
   }
 
-  //used helper method from User class to convert json to User object
-  getUser(id: number) : Observable<User>{
-    return this.http.get<User>(environment.restUrl + '/api/users/' + id)
-      .pipe(
-        map( data => {
-          return User.fromHttp(data);
-        })
-      );
-  }
-
   getBookings(date: string) : Observable<Array<Booking>>{
     // @ts-ignore
     return of(null);
