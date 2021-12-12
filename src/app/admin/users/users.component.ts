@@ -23,6 +23,10 @@ export class UsersComponent implements OnInit {
               private formResetService: FormResetService){ }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(){
     this.dataService.getUsers().subscribe(
       next => {
         this.users = next;
@@ -43,8 +47,6 @@ export class UsersComponent implements OnInit {
         this.message = 'An error occurred - please contact support.'
       }
     );
-
-
   }
 
   setUser(id: number){

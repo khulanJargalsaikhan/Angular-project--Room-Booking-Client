@@ -64,26 +64,40 @@ export class DataService {
   }
 
   updateUser(user: User): Observable<User>{
-    // @ts-ignore
-    return of(null);
-
+    return this.http.put<User>(environment.restUrl + '/api/users/', user);
   }
 
   addUser(newUser: User, password: string) : Observable<User>{
-    // @ts-ignore
-    return of(null);
+    //JavaScript object will be sent to back-end in json format so that spring will accept it as an User object
+    const fullUser = {id: newUser.id, name: newUser.name, password: password};
+    return this.http.post<User>(environment.restUrl + '/api/users', fullUser);
   }
 
+  private getCorrectedRoom(room : Room) {
+    const correctedRoom = {id: room.id, name: room.name, location: room.location, capacities : [] };
+    for (const lc of room.capacities) {
 
+      let correctLayout;
+      for (let member in Layout) {
+        // @ts-ignore
+        if (Layout[member] === lc.layout) {
+          correctLayout = member;
+        }
+      }
+
+      const correctedLayout = {layout : correctLayout, capacity: lc.capacity};
+      // @ts-ignore
+      correctedRoom.capacities.push(correctedLayout);
+    }
+    return correctedRoom;
+  }
 
   updateRoom(room: Room) : Observable<Room> {
-    // @ts-ignore
-    return of(null);
+    return this.http.put<Room>(environment.restUrl + '/api/rooms', this.getCorrectedRoom(room));
   }
 
-  addRoom(newRoom: Room) : Observable<Room> {
-    // @ts-ignore
-    return of(null);
+  addRoom(room: Room) : Observable<Room> {
+    return this.http.post<Room>(environment.restUrl + '/api/rooms', this.getCorrectedRoom(room));
   }
 
 

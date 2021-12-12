@@ -60,3 +60,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Investigating REST errors
 - Retrying when an error occurs
 - Surviving a page refresh
+
+*10th commit*
+- Sending data to REST
+- Customising data with Javascript objects
+- POST and PUTting data

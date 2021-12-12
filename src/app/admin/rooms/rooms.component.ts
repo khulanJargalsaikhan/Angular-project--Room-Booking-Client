@@ -70,7 +70,6 @@ export class RoomsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
-
   }
 
   setRoom(id:number) {
