@@ -65,3 +65,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Sending data to REST
 - Customising data with Javascript objects
 - POST and PUTting data
+
+*11th commit*
+- Implementing DELETE
+- Implementing REST from Angular
+- Getting a confirmation before deleting
