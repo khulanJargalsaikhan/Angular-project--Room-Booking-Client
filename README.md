@@ -70,3 +70,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 - Implementing DELETE
 - Implementing REST from Angular
 - Getting a confirmation before deleting
+
+*12th commit*
+- Setting up the edit booking functionality
+- Pre-fetching data with navigation and a service
+- Using a resolver
